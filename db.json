@@ -1,0 +1,16 @@
+{
+    "bookInfo": [{
+        "title" : "physics",
+        "rating" : 7.5,
+        "description" : "amazing book",
+        "author" : "rajesh agarwal",
+        "id" : 1
+    },
+    {
+  "title": "maths",
+  "rating": 7.5,
+  "description": "amazing book",
+  "author": "rajesh agarwal",
+  "id": 2
+}]
+}
