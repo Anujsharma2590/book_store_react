@@ -2,6 +2,7 @@ import React from 'react'
 import {Poster} from './Poster'
 function BookCard() {
 const [data,setData] = React.useState([])
+const[loading,setLoading] =React.useState(false)
 
     React.useEffect(() => {
         fetch("http://localhost:3001/bookInfo")
@@ -9,18 +10,19 @@ const [data,setData] = React.useState([])
           .then((data) => {
               console.log(data);
               setData(data);
+              setLoading(false);
           });
     }, [])
     console.log(data);
-    return (
+    return loading ? (
+        "Loading...."
+    ) : (
       <div>
-        <div>hello</div>
-        <div>
-          <Poster />
-        </div>
-        <div>
-          <Poster />
-        </div>
+            {data.map((items) => {
+                return (
+                    <Poster key={items.id} {...items}/>
+                )
+            })}
       </div>
     );
 }
